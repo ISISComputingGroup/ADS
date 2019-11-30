@@ -241,7 +241,7 @@
 /**
  * @brief The NetId of and ADS device can be represented in this structure.
  */
-struct AmsNetId {
+struct DLL_EXPORT AmsNetId {
     /** NetId, consisting of 6 digits. */
     uint8_t b[6];
 
