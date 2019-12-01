@@ -23,7 +23,7 @@
 #ifndef _ADS_NOTIFICATION_H_
 #define _ADS_NOTIFICATION_H_
 
-#include "AdsDef.h"
+#include "AdsLib.h"
 #include "RingBuffer.h"
 
 #include <utility>

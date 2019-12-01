@@ -20,7 +20,7 @@
    SOFTWARE.
  */
 
-#include "AdsDef.h"
+#include "AdsLib.h"
 
 #include <cstring>
 #include <ostream>
