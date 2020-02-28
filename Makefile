@@ -1,11 +1,11 @@
 TOP = .
 include $(TOP)/configure/CONFIG
 
-SRC_DIRS += $(TOP)/AdsLib $(TOP)/AdsLibTest
+SRC_DIRS += $(TOP)/AdsLib $(TOP)/AdsLibTest $(TOP)/AdsLibOOI
 
 USR_CXXFLAGS_Linux += -std=c++11 -D_GNU_SOURCE -pedantic -Wall -Wextra
 
-LIBRARY_IOC = AdsLib
+LIBRARY_IOC = AdsLib AdsLibOOI
 
 ifeq ($(OS_CLASS),WIN32)
 USR_CPPFLAGS += -DDLL_EXPORT=__declspec(dllexport)
@@ -21,9 +21,12 @@ AdsLib_SRCS += NotificationDispatcher.cpp
 AdsLib_SRCS += Sockets.cpp
 AdsLib_SRCS += Frame.cpp
 
+AdsLibOOI_SRCS += $(AdsLib_SRCS) AdsNotification.cpp AdsDevice.cpp
+
 INC += AdsDef.h AdsLib.h
 
 AdsLib_SYS_LIBS_WIN32 += ws2_32
+AdsLibOOI_SYS_LIBS_WIN32 += ws2_32
 
 # Requires fructose test framework
 #PROD_IOC += AdsLibTest
